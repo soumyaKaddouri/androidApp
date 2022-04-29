@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnLogOut;
+    Button btnPrf, btnStd, btnLogOut;
     FirebaseAuth mAuth;
 
     @Override
@@ -19,12 +19,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnLogOut = findViewById(R.id.logout);
+        btnLogOut = findViewById(R.id.button_logout);
+        btnPrf = findViewById(R.id.button_profs);
+        btnStd = findViewById(R.id.button_students);
         mAuth = FirebaseAuth.getInstance();
 
         btnLogOut.setOnClickListener(view ->{
             mAuth.signOut();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        });
+
+        btnPrf.setOnClickListener(view ->{
+            startActivity(new Intent(MainActivity.this, Profs_list.class));
+        });
+        btnStd.setOnClickListener(view ->{
+            startActivity(new Intent(MainActivity.this, StudentsList.class));
         });
 
     }
