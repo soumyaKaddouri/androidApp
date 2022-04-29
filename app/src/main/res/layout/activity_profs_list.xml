@@ -4,46 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2CFF5F00"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:gravity="center"
     tools:context=".Profs_list">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="Liste des Professeurs"
-            android:textColor="#FF5F00"
-            android:textSize="35sp"
-            android:textStyle="bold" />
-        <androidx.cardview.widget.CardView
-            android:id="@+id/learnCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="12dp"
-            android:focusable="true"
-            android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
-            app:cardCornerRadius="8dp">
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                android:src="@drawable/professeur"/>
-        </androidx.cardview.widget.CardView>
-    </RelativeLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+
+    <EditText
+        android:id="@+id/search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:layout_marginTop="10dp"
-        android:padding="4dp"
-        android:scrollbars="vertical"/>
+        android:layout_height="wrap_content"
+        android:hint="Rechercher"
+        android:textSize="25dp" />
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="461dp" />
+
+    <ImageView
+        android:layout_width="73dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/button_profs"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="-100dp"
+        android:padding="10dp"
+        android:src="@drawable/add" />
+
 </LinearLayout>
