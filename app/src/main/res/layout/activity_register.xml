@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_O"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ImageView
+
+        android:id="@+id/image_ensias"
+        android:layout_width="wrap_content"
+        android:layout_height="274dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/ensias" />
+
+    <TextView
+        android:id="@+id/texte_state"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_ensias"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="-7dp"
+        android:layout_marginEnd="-4dp"
+        android:gravity="center"
+        android:text="Register"
+        android:textColor="#FF5F00"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/add_login"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/texte_state"
+        android:layout_alignStart="@+id/texte_state"
+        android:layout_alignEnd="@+id/texte_state"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="46dp"
+        android:backgroundTint="#D31F1F"
+        android:hint="Login"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/add_password"
+        android:layout_width="366dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/image_ensias"
+        android:layout_alignStart="@+id/add_login"
+        android:layout_alignEnd="@+id/add_login"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="1dp"
+        android:backgroundTint="#D31F1F"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button_login"
+        style="@style/MaterialAlertDialog.Material3"
+        android:layout_width="219dp"
+        android:layout_height="63dp"
+        android:layout_alignStart="@+id/add_password"
+        android:layout_alignEnd="@+id/add_password"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="494dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#FF5F00"
+        android:text="Register" />
+
+    <TextView
+        android:id="@+id/login_here"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_login"
+        android:layout_alignEnd="@+id/button_login"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-16dp"
+        android:layout_marginTop="576dp"
+        android:layout_marginEnd="-21dp"
+        android:text="Do you already have an account ? Login" />
+
+
+</RelativeLayout>
