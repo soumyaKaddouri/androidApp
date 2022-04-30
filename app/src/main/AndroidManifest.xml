@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidApp">
         <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
             android:name=".StudentsList"
             android:exported="false" />
         <activity

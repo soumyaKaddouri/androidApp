@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_O"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+
+    <Button
+        android:id="@+id/button_profs"
+        style="@style/MaterialAlertDialog.Material3"
+        android:layout_width="269dp"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#FF5F00"
+        android:text="All Professors" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/button_profs"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="-100dp"
+        android:padding="10dp"
+        android:src="@drawable/professeur" />
+
+    <Button
+        android:id="@+id/button_students"
+        style="@style/MaterialAlertDialog.Material3"
+        android:layout_width="219dp"
+        android:layout_height="63dp"
+        android:layout_alignStart="@+id/button_profs"
+        android:layout_alignEnd="@+id/button_profs"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#FF5F00"
+        android:text="All students" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/button_profs"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="-2dp"
+        android:padding="10dp"
+        android:src="@drawable/etudiant" />
+
+    <Button
+        android:id="@+id/button_logout"
+        style="@style/MaterialAlertDialog.Material3"
+        android:layout_width="219dp"
+        android:layout_height="63dp"
+        android:layout_alignStart="@+id/button_profs"
+        android:layout_alignEnd="@+id/button_profs"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="336dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#FF5F00"
+        android:text="Logout" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/button_profs"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="-179dp"
+        android:padding="10dp"
+        android:src="@drawable/logout" />
+
+
+</RelativeLayout>

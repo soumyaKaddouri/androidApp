@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnPrf, btnStd, btnLogOut;
+    Button btnReg, btnLogin;
     FirebaseAuth mAuth;
 
     @Override
@@ -19,31 +19,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnLogOut = findViewById(R.id.button_logout);
-        btnPrf = findViewById(R.id.button_profs);
-        btnStd = findViewById(R.id.button_students);
+        btnReg = findViewById(R.id.button_reg);
+        btnLogin = findViewById(R.id.button_login);
         mAuth = FirebaseAuth.getInstance();
 
-        btnLogOut.setOnClickListener(view ->{
-            mAuth.signOut();
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        btnReg.setOnClickListener(view ->{
+            startActivity(new Intent(MainActivity.this, RegisterActivity.class));
         });
 
-        btnPrf.setOnClickListener(view ->{
-            startActivity(new Intent(MainActivity.this, Profs_list.class));
-        });
-        btnStd.setOnClickListener(view ->{
-            startActivity(new Intent(MainActivity.this, StudentsList.class));
+        btnLogin.setOnClickListener(view ->{
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
         });
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user == null){
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-        }
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        FirebaseUser user = mAuth.getCurrentUser();
+//        if (user == null){
+//            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+//        }
+//    }
 }
