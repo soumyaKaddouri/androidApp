@@ -5,12 +5,12 @@ import java.util.LinkedList;
 public class Groupe {
     private String titre;
     private String description;
-    LinkedList<Etudiant> liste_etudiants;
+    LinkedList<Student> liste_students;
 
-    public Groupe(String titre, String description, LinkedList<Etudiant> liste_etudiants ){
+    public Groupe(String titre, String description, LinkedList<Student> liste_students){
         this.titre= new String(titre);
         this.description= new String(description);
-        this.liste_etudiants=liste_etudiants;
+        this.liste_students = liste_students;
     }
 
     public String getTitre() {
@@ -29,11 +29,11 @@ public class Groupe {
         this.description = description;
     }
 
-    public LinkedList<Etudiant> getListe_etudiants() {
-        return liste_etudiants;
+    public LinkedList<Student> getListe_etudiants() {
+        return liste_students;
     }
 
-    public void setListe_etudiants(LinkedList<Etudiant> liste_etudiants) {
-        this.liste_etudiants = liste_etudiants;
+    public void setListe_etudiants(LinkedList<Student> liste_students) {
+        this.liste_students = liste_students;
     }
 }

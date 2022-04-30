@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.androidapp.adapters.ProfAdapter;
-import com.example.androidapp.model.Professeur;
+import com.example.androidapp.model.Professor;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -19,7 +19,7 @@ import java.util.LinkedList;
 
 public class Profs_list extends AppCompatActivity {
     ListView list_prof;
-    LinkedList<Professeur> profs;
+    LinkedList<Professor> profs;
     FirebaseFirestore db;
 
     public ProgressDialog mProgressDialog;
@@ -33,7 +33,7 @@ public class Profs_list extends AppCompatActivity {
         db=FirebaseFirestore.getInstance();
 
 
-        profs = new LinkedList<Professeur>();
+        profs = new LinkedList<Professor>();
         getAllProfesseurs();
     }
     void getAllProfesseurs(){
@@ -51,7 +51,7 @@ public class Profs_list extends AppCompatActivity {
                                 System.out.println(document.getString("tel"));
                                 System.out.println(document.getString("photo"));
                                 System.out.println(document.getString("departement"));
-                                Professeur p = new Professeur(
+                                Professor p = new Professor(
                                         document.getString("nom"),
                                         document.getString("prenom"),
                                         document.getString("tel"),

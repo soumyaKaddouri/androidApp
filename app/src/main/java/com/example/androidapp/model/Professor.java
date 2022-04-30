@@ -4,10 +4,10 @@ import java.util.LinkedList;
 
 import java.util.LinkedList;
 
-public class Professeur {
+public class Professor {
 
-    private String nom;
-    private String prenom;
+    private String fullName;
+    private String email;
     private String tel;
     //private LinkedList<Groupe> liste_groupe;
     private String photo;
@@ -15,7 +15,7 @@ public class Professeur {
 
 
 
-    public Professeur(String nom, String prenom, String tel, String photo, String departement){
+    public Professor(String nom, String prenom, String tel, String photo, String departement){
         this.nom= new String(nom);
         this.prenom= new String(prenom);
         this.tel= new String(tel);
@@ -73,7 +73,7 @@ public class Professeur {
     }
     @Override
     public String toString() {
-        return "Professeur{" +
+        return "Professor{" +
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", tel='" + tel + '\'' +

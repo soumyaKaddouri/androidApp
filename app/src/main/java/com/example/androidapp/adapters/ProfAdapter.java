@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.androidapp.R;
-import com.example.androidapp.model.Professeur;
+import com.example.androidapp.model.Professor;
 
 import java.util.LinkedList;
 
@@ -16,24 +16,24 @@ import java.util.LinkedList;
 public class ProfAdapter extends BaseAdapter {
 
     private Context context;
-    private LinkedList<Professeur> professeurs;
+    private LinkedList<Professor> professors;
     private LayoutInflater inflater;
 
-    public ProfAdapter(Context context, LinkedList<Professeur> professeurs) {
+    public ProfAdapter(Context context, LinkedList<Professor> professors) {
         this.context = context;
-        this.professeurs = professeurs;
+        this.professors = professors;
         this.inflater = LayoutInflater.from(context);
     }
 
 
     @Override
     public int getCount() {
-        return professeurs.size();
+        return professors.size();
     }
 
     @Override
-    public Professeur getItem(int position) {
-        return professeurs.get(position);
+    public Professor getItem(int position) {
+        return professors.get(position);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ProfAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflater.inflate(R.layout.adapter_item,null);
 
-        Professeur currentProf = getItem(i);
+        Professor currentProf = getItem(i);
         String itemName= currentProf.getNom();
         String itemPrenom= currentProf.getPrenom();
         String itemDepatement=currentProf.getDepartement();

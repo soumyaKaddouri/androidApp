@@ -6,9 +6,35 @@
     android:id="@+id/layout_O"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     >
 
+    <TextView
+        android:id="@+id/text_wlcm"
+        android:layout_width="279dp"
+        android:layout_height="77dp"
+        android:layout_alignBottom="@+id/button_login"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="345dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="Welcome to Iwim Hub Application"
+        android:textColor="#3111A5"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:layout_alignBottom="@+id/text_wlcm"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="-16dp"
+        android:layout_marginBottom="-133dp"
+        android:padding="10dp"
+        android:src="@drawable/logo1" />
 
     <Button
         android:id="@+id/button_reg"
@@ -18,10 +44,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="256dp"
-        android:layout_marginEnd="71dp"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="66dp"
         android:layout_marginRight="10dp"
-        android:backgroundTint="#08439C"
+        android:backgroundTint="#3111A5"
         android:text="Register"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -34,26 +60,12 @@
         android:layout_alignStart="@+id/button_reg"
         android:layout_alignEnd="@+id/button_reg"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="344dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="510dp"
+        android:layout_marginEnd="2dp"
         android:layout_marginRight="10dp"
-        android:backgroundTint="#08439C"
+        android:backgroundTint="#3111A5"
         android:text="Login"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="623dp"
-        android:layout_marginEnd="121dp"
-        android:layout_marginBottom="73dp"
-        android:text="For IWIM students"
-        android:textColor="#08439C"
         android:textSize="20dp"
         android:textStyle="bold" />
 
