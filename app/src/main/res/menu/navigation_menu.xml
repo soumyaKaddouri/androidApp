@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuProfile"
+        android:icon="@drawable/ic_user"
+        android:title="Profile"/>
+
+    <item android:id="@+id/menuNotifications"
+        android:icon="@drawable/ic_notification"
+        android:title="Notifications"/>
+
+    <item android:id="@+id/menuProfs"
+        android:icon="@drawable/professor"
+        android:title="Professors" />
+
+    <item android:id="@+id/menuStudents"
+        android:icon="@drawable/student"
+        android:title="Students"/>
+
+    <item android:title="Others">
+
+        <menu>
+
+            <item android:id="@+id/menuSettings"
+                android:icon="@drawable/ic_settings"
+                android:title="Settings"/>
+
+        </menu>
+
+    </item>
+
+</menu>

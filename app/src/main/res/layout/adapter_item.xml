@@ -9,7 +9,7 @@
         android:id="@+id/prof_icon"
         android:layout_width="113dp"
         android:layout_height="85dp"
-        android:src="@drawable/professeur"
+        android:src="@drawable/professor"
         />
 
     <RelativeLayout

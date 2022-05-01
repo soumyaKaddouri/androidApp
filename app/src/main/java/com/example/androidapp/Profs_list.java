@@ -39,7 +39,7 @@ public class Profs_list extends AppCompatActivity {
     void getAllProfesseurs(){
 
         showProgressDialog();
-        db.collection("professeur")
+        db.collection("professor")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
