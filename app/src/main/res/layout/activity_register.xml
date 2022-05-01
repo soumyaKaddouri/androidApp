@@ -2,11 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
-    android:background="@drawable/bb">
-
+    android:background="@drawable/bb"
+    tools:context=".RegisterActivity">
 
 
     <TextView
@@ -110,6 +109,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/inputPhoneNum"
         app:layout_constraintTop_toBottomOf="@+id/inputPhoneNum" />
+
     <EditText
         android:id="@+id/inputConformPassword"
         android:layout_width="0dp"
@@ -133,14 +133,11 @@
 
     <RadioGroup
         android:id="@+id/radio_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="382dp"
+        android:layout_height="42dp"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
         android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="@+id/inputConformPassword"
         app:layout_constraintStart_toStartOf="@+id/inputConformPassword"
         app:layout_constraintTop_toBottomOf="@+id/inputConformPassword">
@@ -149,10 +146,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
+            android:paddingLeft="16dp"
             android:text="Are you a ?"
-            android:textSize="20dp"
             android:textColor="@color/white"
-            android:paddingLeft="20dp"/>
+            android:textSize="20dp" />
 
         <RadioButton
             android:id="@+id/student_radio_button"
@@ -162,15 +159,16 @@
             android:buttonTint="@color/white"
             android:checked="true"
             android:text="Student"
-            android:textSize="16dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
         <RadioButton
             android:id="@+id/prof_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="false"
             android:buttonTint="@color/white"
+            android:checked="false"
+            android:paddingRight="10dp"
             android:text="Professor"
             android:textColor="@color/white"
             android:textSize="16dp" />
@@ -178,8 +176,8 @@
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="355dp"
-        android:layout_height="44dp"
+        android:layout_width="345dp"
+        android:layout_height="53dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_bg"
         android:text="Register"
@@ -191,7 +189,7 @@
         android:id="@+id/alreadyHaveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:shadowColor="@color/white"
         android:text="Already Have an Account?"
         android:textColor="@color/white"

@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class Professor {
 
-    private String fullName;
+    private String nom,prenom;
     private String email;
     private String tel;
     //private LinkedList<Groupe> liste_groupe;
