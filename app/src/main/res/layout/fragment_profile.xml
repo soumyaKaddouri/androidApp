@@ -23,14 +23,16 @@
             app:riv_oval="true" />
 
         <TextView
+            android:id="@+id/fNameUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/Soumya_kaddouri"
+            android:text="Med med"
             android:textColor="@color/blueColor"
             android:textSize="20dp"
             android:textStyle="bold" />
         <TextView
+            android:id="@+id/userType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
