@@ -13,6 +13,9 @@ import androidx.navigation.ui.NavigationUI;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -64,9 +67,9 @@ public class Home extends AppCompatActivity {
                     type = navigationView.findViewById(R.id.type);
                     String nameRes = task.getResult().getString("fName");
                     String typeRes = task.getResult().getString("type");
-                    System.out.println(nameRes);
-                    System.out.println(typeRes);
-                    System.out.println(fName);
+//                    System.out.println(nameRes);
+//                    System.out.println(typeRes);
+//                    System.out.println(fName);
                     fName.setText(nameRes);
                     type.setText(typeRes);
 
@@ -89,23 +92,8 @@ public class Home extends AppCompatActivity {
             }
         });
 
-//        btnLogOut = findViewById(R.id.button_logout);
-//        btnPrf = findViewById(R.id.button_profs);
-//        btnStd = findViewById(R.id.button_students);
-        mAuth = FirebaseAuth.getInstance();
-//
-//        btnLogOut.setOnClickListener(view ->{
-//            mAuth.signOut();
-//            startActivity(new Intent(Home.this, LoginActivity.class));
-//        });
-//
-//        btnPrf.setOnClickListener(view ->{
-//            startActivity(new Intent(Home.this, Profs_list.class));
-//        });
-//        btnStd.setOnClickListener(view ->{
-//            startActivity(new Intent(Home.this, StudentsList.class));
-//        });
     }
+
 
     @Override
     protected void onStart() {
@@ -115,4 +103,27 @@ public class Home extends AppCompatActivity {
             startActivity(new Intent(Home.this, LoginActivity.class));
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        if (item.getItemId()==R.id.menuLogout){
+            System.out.println(item.getItemId());
+            mAuth = FirebaseAuth.getInstance();
+            mAuth.signOut();
+            startActivity(new Intent(Home.this, LoginActivity.class));
+            return true;
+        }
+
+        return true;
+    }
+
+
 }
