@@ -1,21 +1,25 @@
 package com.example.androidapp.model;
 
 public class User {
-    private String fullName, email, tel, type;
+    private String fName, email, phoneNum, type;
 
-    public User(String fullName, String email, String tel, String type) {
-        this.fullName = fullName;
+    public User() {
+
+    }
+
+    public User(String fName, String email, String phoneNum, String type) {
+        this.fName = fName;
         this.email = email;
-        this.tel = tel;
+        this.phoneNum = phoneNum;
         this.type = type;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
     public String getEmail() {
@@ -26,12 +30,12 @@ public class User {
         this.email = email;
     }
 
-    public String getTel() {
-        return tel;
+    public String getPhoneNum() {
+        return phoneNum;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
     public String getType() {
@@ -40,5 +44,15 @@ public class User {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "fName='" + fName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

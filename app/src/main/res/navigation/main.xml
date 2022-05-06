@@ -16,6 +16,11 @@
         android:label="Notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
+        android:id="@+id/menuProfs"
+        android:name="com.example.androidapp.ProfessorsFragment"
+        android:label="Professors"
+        tools:layout="@layout/fragment_professors" />
+    <fragment
         android:id="@+id/menuSettings"
         android:name="com.example.androidapp.SettingsFragment"
         android:label="Settings"
