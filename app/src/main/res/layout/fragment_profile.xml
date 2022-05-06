@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Med med"
+            android:text="Full Name"
             android:textColor="@color/blueColor"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="@string/student"
+            android:text="User type"
             android:textColor="@color/green"
             android:textSize="18dp"/>
 
@@ -63,19 +63,10 @@
             android:src="@drawable/ic_person"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Full name"
-            android:textStyle="bold"
-            android:textColor="@color/blueColor"
-            android:textSize="18dp"
-            android:layout_marginLeft="5dp"/>
-
-        <TextView
             android:id="@+id/fName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Soumya_kaddouri"
+            android:text="Full Name"
             android:textColor="@color/blue"
             android:textSize="15dp"
             android:layout_marginLeft="25dp"/>
@@ -103,20 +94,13 @@
             android:layout_height="24dp"
             android:src="@drawable/ic_email"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textStyle="bold"
-            android:textColor="@color/blueColor"
-            android:textSize="18dp"
-            android:layout_marginLeft="5dp"/>
+
 
         <TextView
             android:id="@+id/textViewEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Soumya_kaddouri@gmail.com"
+            android:text="email@gmail.com"
             android:textColor="@color/blue"
             android:textSize="15dp"
             android:layout_marginLeft="25dp"/>
@@ -146,19 +130,10 @@
             android:src="@drawable/ic_phone"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Phone Number"
-            android:textStyle="bold"
-            android:textColor="@color/blueColor"
-            android:textSize="18dp"
-            android:layout_marginLeft="5dp"/>
-
-        <TextView
             android:id="@+id/textViewPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+212623818534"
+            android:text="Phone Number"
             android:textColor="@color/blue"
             android:textSize="15dp"
             android:layout_marginLeft="25dp"/>
