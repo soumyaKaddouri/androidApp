@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".UserData">
 
+
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -27,16 +28,19 @@
             app:riv_oval="true"
             android:layout_centerInParent="true"
             />
+
         <TextView
+            android:id="@+id/textFName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textFName"
             android:layout_below="@id/imageProfile"
-            android:hint="Loading...."
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="6dp"
+            android:hint="Loading...."
             android:textColor="@color/white"
-            android:textColorHint="@color/white"/>
+            android:textColorHint="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
       </RelativeLayout>
     <RelativeLayout
@@ -120,28 +124,50 @@
           android:id="@+id/dividerPhone"/>
 
     </RelativeLayout>
-    <androidx.cardview.widget.CardView
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="12dp"
-        android:focusable="true"
-        android:layout_alignParentCen="true"
-        android:onClick="sendMessage"
-        app:cardCornerRadius="8dp"
-        android:background="@color/blue">
+        android:layout_gravity="center"
+        >
 
-      <com.makeramen.roundedimageview.RoundedImageView
-          android:id="@+id/sendMsg"
-          android:layout_width="24dp"
-          android:layout_height="24dp"
-          android:scaleType="centerCrop"
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/msg"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center|bottom"
+          android:src="@drawable/ic_message"
+          android:contentDescription="Message"
+          android:layout_margin="16dp"
+          android:backgroundTint="@color/colorPrimary"
+          app:tint="@color/white"
+          android:onClick="onMsgButton"/>
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/call"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center|bottom"
           android:src="@drawable/ic_phone"
-          android:backgroundTint=""
-          app:riv_oval="true"
-          android:layout_centerInParent="true"
-          />
+          android:contentDescription="Message"
+          android:layout_margin="16dp"
+          android:backgroundTint="@color/colorPrimary"
+          app:tint="@color/white"/>
 
-    </androidx.cardview.widget.CardView>
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/whtsp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center|bottom"
+          android:src="@drawable/ic_whtsp"
+          android:contentDescription="Message"
+          android:layout_margin="16dp"
+          android:backgroundTint="@color/colorPrimary"
+          app:tint="@color/white"/>
+
+    </LinearLayout>
+
+
   </LinearLayout>
 
   </ScrollView>

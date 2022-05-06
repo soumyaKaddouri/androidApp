@@ -19,7 +19,6 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.core.UserData;
 
 
 public class ProfessorsFragment extends Fragment implements View.OnClickListener {
@@ -66,10 +65,10 @@ public class ProfessorsFragment extends Fragment implements View.OnClickListener
                 String id = documentSnapshot.getId();
 
                 //Toast.makeText(ListProfesseurs.this,"Position: " + position + " ID: " + id, Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(getActivity(), UserData.class);
-                //intent.putExtra("SELECTED_USER_EMAIL", id);
-                //intent.putExtra("SELECTED_USER_ROLE", "Professor");
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(), UserData.class);
+                intent.putExtra("SELECTED_USER_EMAIL", id);
+                intent.putExtra("SELECTED_USER_ROLE", "Professor");
+                startActivity(intent);
             }
         });
     }

@@ -3,6 +3,7 @@
     package="com.example.androidapp" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
@@ -19,9 +20,6 @@
             android:exported="false" />
         <activity
             android:name=".StudentsList"
-            android:exported="false" />
-        <activity
-            android:name=".Profs_list"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
