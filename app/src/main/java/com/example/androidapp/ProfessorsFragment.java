@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.example.androidapp.adapters.UserListAdapter;
 import com.example.androidapp.model.User;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,6 +27,7 @@ public class ProfessorsFragment extends Fragment implements View.OnClickListener
     CollectionReference usersCollection = db.collection("users");
     RecyclerView recyclerView;
     UserListAdapter adapter;
+    FloatingActionButton addUser;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,11 +35,18 @@ public class ProfessorsFragment extends Fragment implements View.OnClickListener
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_professors, container, false);
 
+
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        addUser = getActivity().findViewById(R.id.addUser);
+        addUser.setOnClickListener(view ->{
+            startActivity(new Intent(getActivity(), AddUserActivity.class));
+        });
+
 
         recyclerView = (RecyclerView) getActivity().findViewById(R.id.recView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -92,4 +101,5 @@ public class ProfessorsFragment extends Fragment implements View.OnClickListener
         super.onStop();
         adapter.stopListening();
     }
+
 }
