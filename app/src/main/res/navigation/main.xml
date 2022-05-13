@@ -21,6 +21,11 @@
         android:label="Professors"
         tools:layout="@layout/fragment_professors" />
     <fragment
+        android:id="@+id/menuStudents"
+        android:name="com.example.androidapp.StudentsFragment"
+        android:label="Students"
+        tools:layout="@layout/fragment_students" />
+    <fragment
         android:id="@+id/menuSettings"
         android:name="com.example.androidapp.SettingsFragment"
         android:label="Settings"
