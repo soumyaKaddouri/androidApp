@@ -90,31 +90,34 @@ public class AddUserActivity extends AppCompatActivity {
             regPassword.setError("Passwords are not matching");
             regPassword.requestFocus();
         }else{
+
+            DocumentReference documentReference = db.collection("users").document(email);
+            Map<String,Object> user = new HashMap<>();
+            user.put("fName",name);
+            user.put("email",email);
+            user.put("phoneNum",phoneNum);
+            user.put("type",selectedUser);
+            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Log.d("TAG","onSuccess: user profile is created for "+ email);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d("TAG","onFailure:" +e.toString());
+                }
+            });
+
             mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                
+
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         //userId = mAuth.hetCurrentUser().grtUid();
-                        Toast.makeText(AddUserActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                        DocumentReference documentReference = db.collection("users").document(email);
-                        Map<String,Object> user = new HashMap<>();
-                        user.put("fName",name);
-                        user.put("email",email);
-                        user.put("phoneNum",phoneNum);
-                        user.put("type",selectedUser);
-                        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.d("TAG","onSuccess: user profile is created for "+ email);
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d("TAG","onFailure:" +e.toString());
-                            }
-                        });
+                        Toast.makeText(AddUserActivity.this, "User added successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(AddUserActivity.this, Home.class));
+
                     }else{
                         Toast.makeText(AddUserActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }

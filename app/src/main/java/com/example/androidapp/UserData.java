@@ -20,7 +20,7 @@ import com.google.firebase.storage.FirebaseStorage;
 
 public class UserData extends AppCompatActivity {
     TextView fullName, email, phoneNum, fName;
-    FloatingActionButton msgButton;
+    FloatingActionButton msg,callButton, sendEmail;
     String userSelectedEmail, userSelectedRole;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -38,7 +38,36 @@ public class UserData extends AppCompatActivity {
         phoneNum = findViewById(R.id.textVShowPhone);
         fName = findViewById(R.id.textFName);
 
-        msgButton = findViewById(R.id.msg);
+        msg = findViewById(R.id.msg);
+        callButton = findViewById(R.id.call);
+        sendEmail = findViewById(R.id.senEmail);
+
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:0666189113"));
+                startActivity(intent);
+            }
+        });
+
+        sendEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = "red@gmail.com";
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + email));
+                startActivity(Intent.createChooser(emailIntent, "Send an email with : "));
+            }
+        });
+
+        msg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone = "0623151223";
+                Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + phone));
+                startActivity(smsIntent);
+            }
+        });
 
         loadUserData();
     }
@@ -69,10 +98,5 @@ public class UserData extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-    public void onMsgButton(View view){
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:0666189113"));
-        startActivity(intent);
-    }
 
 }

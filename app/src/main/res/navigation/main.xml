@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/menuStudents"
         android:name="com.example.androidapp.StudentsFragment"
-        android:label="Professors"
+        android:label="Students"
         tools:layout="@layout/fragment_students" />
     <fragment
         android:id="@+id/menuSettings"

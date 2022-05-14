@@ -140,8 +140,7 @@
           android:contentDescription="Message"
           android:layout_margin="16dp"
           android:backgroundTint="@color/colorPrimary"
-          app:tint="@color/white"
-          android:onClick="onMsgButton"/>
+          app:tint="@color/white"/>
 
       <com.google.android.material.floatingactionbutton.FloatingActionButton
           android:id="@+id/call"
@@ -155,11 +154,11 @@
           app:tint="@color/white"/>
 
       <com.google.android.material.floatingactionbutton.FloatingActionButton
-          android:id="@+id/whtsp"
+          android:id="@+id/senEmail"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center|bottom"
-          android:src="@drawable/ic_whtsp"
+          android:src="@drawable/ic_google"
           android:contentDescription="Message"
           android:layout_margin="16dp"
           android:backgroundTint="@color/colorPrimary"
@@ -169,5 +168,6 @@
 
 
   </LinearLayout>
+  
 
   </ScrollView>
