@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -37,7 +39,7 @@ public class AddUserActivity extends AppCompatActivity {
     Button btnAdd;
     private RadioButton radioButton;
     private RadioGroup radioGroup;
-    FirebaseAuth mAuth;
+    FirebaseAuth mAuth, mAuth2;
     FirebaseFirestore db;
 
     @Override
@@ -109,7 +111,18 @@ public class AddUserActivity extends AppCompatActivity {
                 }
             });
 
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
+                    .setDatabaseUrl("https://iwimapp-7b2b0-default-rtdb.firebaseio.com/")
+                    .setApiKey("AIzaSyBG2B3NlWO08UMd6cYTzVciCPf8E5vKzgU")
+                    .setApplicationId("iwimapp-7b2b0").build();
+
+            try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "AnyAppName");
+                mAuth2 = FirebaseAuth.getInstance(myApp);
+            } catch (IllegalStateException e){
+                mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("AppName"));
+            }
+
+            mAuth2.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -121,6 +134,7 @@ public class AddUserActivity extends AppCompatActivity {
                     }else{
                         Toast.makeText(AddUserActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
+                    mAuth2.signOut();
                 }
             });
         }

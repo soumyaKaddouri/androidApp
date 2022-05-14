@@ -19,5 +19,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:src="@drawable/ic_person_add"
+        android:contentDescription="Message"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/recView"
+        app:layout_constraintEnd_toEndOf="@+id/recView"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

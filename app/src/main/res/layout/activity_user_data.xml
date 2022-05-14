@@ -18,6 +18,17 @@
           android:layout_width="match_parent"
           android:layout_height="250dp"
           android:background="@color/colorPrimary">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:src="@drawable/ic_arrow"
+            android:contentDescription="Message"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/blueColor"
+            app:borderWidth="0dp"
+            app:tint="@color/white"/>
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imageProfile"
@@ -54,14 +65,15 @@
           android:layout_height="25dp"
         android:id="@+id/ic_prf"
         android:background="@drawable/ic_person"/>
+
       <TextView
+          android:id="@+id/textVShowFullName"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-        android:id="@+id/textVShowFullName"
-        android:layout_alignStart="@id/ic_prf"
-        android:hint="Loading"
-        android:layout_marginStart="50dp"
-        android:textSize="18sp"/>
+          android:layout_alignStart="@id/ic_prf"
+          android:layout_marginStart="50dp"
+          android:hint="Loading"
+          android:textSize="18sp" />
       <View
           android:layout_width="match_parent"
           android:layout_height="1dp"
@@ -168,6 +180,6 @@
 
 
   </LinearLayout>
-  
+
 
   </ScrollView>

@@ -1,13 +1,17 @@
 package com.example.androidapp.adapters;
 
+import com.example.androidapp.Home;
+import com.example.androidapp.LoginActivity;
 import com.example.androidapp.R;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +32,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class UserListAdapter  extends FirestoreRecyclerAdapter<User,UserListAdapter.UserListViewHolder> {
     //private ArrayList<User> postList;
     private OnItemClickListener listener;
+
     Context context;
 
     public class UserListViewHolder extends RecyclerView.ViewHolder {
@@ -48,6 +53,8 @@ public class UserListAdapter  extends FirestoreRecyclerAdapter<User,UserListAdap
                     }
                 }
             });
+
+
         }
     }
 
@@ -78,6 +85,7 @@ public class UserListAdapter  extends FirestoreRecyclerAdapter<User,UserListAdap
         holder.phone.setText(model.getPhoneNum());
         holder.email.setText(model.getEmail());
 
+
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -99,6 +107,7 @@ public class UserListAdapter  extends FirestoreRecyclerAdapter<User,UserListAdap
                 return false;
             }
         });
+
     }
 
 }

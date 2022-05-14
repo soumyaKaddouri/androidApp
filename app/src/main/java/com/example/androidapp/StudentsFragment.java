@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.example.androidapp.adapters.UserListAdapter;
 import com.example.androidapp.model.User;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,6 +27,7 @@ public class StudentsFragment extends Fragment implements View.OnClickListener {
     CollectionReference usersCollection = db.collection("users");
     RecyclerView recyclerView;
     UserListAdapter adapter;
+    FloatingActionButton addUser;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +40,11 @@ public class StudentsFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        addUser = getActivity().findViewById(R.id.addUser);
+        addUser.setOnClickListener(view ->{
+            startActivity(new Intent(getActivity(), AddUserActivity.class));
+        });
 
         recyclerView = (RecyclerView) getActivity().findViewById(R.id.recView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -64,7 +71,6 @@ public class StudentsFragment extends Fragment implements View.OnClickListener {
             public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
                 String id = documentSnapshot.getId();
 
-                //Toast.makeText(ListProfesseurs.this,"Position: " + position + " ID: " + id, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), UserData.class);
                 intent.putExtra("SELECTED_USER_EMAIL", id);
                 intent.putExtra("SELECTED_USER_ROLE", "Student");
