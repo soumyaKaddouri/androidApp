@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -14,6 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.androidapp.adapters.UserListAdapter;
 import com.example.androidapp.model.Professor;
 import com.example.androidapp.model.Student;
 import com.example.androidapp.model.User;
@@ -21,6 +23,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -37,6 +40,7 @@ public class AddUserActivity extends AppCompatActivity {
     EditText regEmail, regName, regPhoneNum, regPassword, regConformPassword;
     TextView loginHere;
     Button btnAdd;
+    FloatingActionButton btnBack;
     private RadioButton radioButton;
     private RadioGroup radioGroup;
     FirebaseAuth mAuth, mAuth2;
@@ -55,6 +59,14 @@ public class AddUserActivity extends AppCompatActivity {
         radioGroup = findViewById(R.id.radio_group);
 
         btnAdd = findViewById(R.id.btnAdd);
+        btnBack = findViewById(R.id.backButton);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddUserActivity.this, UserListAdapter.class));
+            }
+        });
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();

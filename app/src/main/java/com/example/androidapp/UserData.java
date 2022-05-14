@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.androidapp.adapters.UserListAdapter;
 import com.example.androidapp.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -56,7 +57,7 @@ public class UserData extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UserData.this, Home.class));
+                startActivity(new Intent(UserData.this, UserListAdapter.class));
             }
         });
 

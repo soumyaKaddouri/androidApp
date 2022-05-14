@@ -18,17 +18,21 @@
           android:layout_width="match_parent"
           android:layout_height="250dp"
           android:background="@color/colorPrimary">
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
-            android:src="@drawable/ic_arrow"
-            android:contentDescription="Message"
-            android:layout_margin="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
             android:backgroundTint="@color/blueColor"
+            android:contentDescription="Message"
+            android:src="@drawable/ic_arrow"
             app:borderWidth="0dp"
-            app:tint="@color/white"/>
+            app:tint="@color/white" />
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imageProfile"

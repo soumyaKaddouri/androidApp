@@ -6,7 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".AddUserActivity">
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:contentDescription="Message"
+        android:outlineAmbientShadowColor="@color/white"
+        android:outlineSpotShadowColor="@color/white"
+        android:src="@drawable/ic_arrow"
+        app:borderWidth="0dp"
+        app:tint="@color/blueColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
     <ImageView
         android:id="@+id/logo"
         android:layout_width="314dp"

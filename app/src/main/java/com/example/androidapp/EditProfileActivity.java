@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.androidapp.adapters.UserListAdapter;
 import com.example.androidapp.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -26,6 +29,7 @@ public class EditProfileActivity extends AppCompatActivity {
     FirebaseFirestore db;
     User myUser;
     DocumentReference documentReference;
+    FloatingActionButton backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,7 @@ public class EditProfileActivity extends AppCompatActivity {
         email = findViewById(R.id.updateEmail);
         phoneNumber = findViewById(R.id.updatePhone);
         updateProfile = findViewById(R.id.btnUpdateProfile);
+        backBtn = findViewById(R.id.backButton);
 
         documentReference = db.collection("users").document(user.getEmail());
         documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -61,6 +66,13 @@ public class EditProfileActivity extends AppCompatActivity {
         });
         updateProfile.setOnClickListener(view -> {
             updateProfile();
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EditProfileActivity.this, Home.class));
+            }
         });
 
     }
