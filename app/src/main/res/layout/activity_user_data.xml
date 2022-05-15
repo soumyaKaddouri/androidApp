@@ -23,16 +23,43 @@
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|bottom"
             android:layout_marginStart="3dp"
             android:layout_marginTop="3dp"
             android:layout_marginEnd="3dp"
             android:layout_marginBottom="3dp"
+            android:layout_alignParentLeft="true"
             android:backgroundTint="@color/blueColor"
             android:contentDescription="Message"
             android:src="@drawable/ic_arrow"
             app:borderWidth="0dp"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:outlineSpotShadowColor="@color/blueColor"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/editBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@color/blueColor"
+            android:contentDescription="Message"
+            android:src="@drawable/ic_edit"
+            app:borderWidth="0dp"
+            app:tint="@color/white"
+            android:outlineSpotShadowColor="@color/blueColor"/>
+          <com.google.android.material.floatingactionbutton.FloatingActionButton
+              android:id="@+id/deleteBtn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentRight="true"
+              android:layout_below="@+id/editBtn"
+              android:layout_marginBottom="3dp"
+              android:backgroundTint="@color/blueColor"
+              android:contentDescription="Message"
+              android:src="@drawable/ic_delete"
+              app:borderWidth="0dp"
+              app:tint="@color/white"
+              android:outlineSpotShadowColor="@color/blueColor"/>
+
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imageProfile"
