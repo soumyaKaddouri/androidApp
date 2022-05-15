@@ -48,7 +48,6 @@ public class PlanningsFragment extends Fragment {
     ListView myPdfFilesView;
     DatabaseReference databaseReference;
     List<UploadPDF> uploadPDFs;
-    PdfListAdapter myAdapter;
     FloatingActionButton addPlanning;
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -115,9 +114,9 @@ public class PlanningsFragment extends Fragment {
         System.out.println("HHHHHHHHHHHH"+databaseReference);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot postSnapshot: snapshot.getChildren()){
-                    UploadPDF uploadPdf = postSnapshot.getValue(UploadPDF.class);
+            public void onDataChange(DataSnapshot snapshot) {
+                for(DataSnapshot ds :  snapshot.getChildren()){
+                    UploadPDF uploadPdf = ds.getValue(UploadPDF.class);
                     System.out.println("Souma"+uploadPdf);
                     uploadPDFs.add(uploadPdf);
                 }
