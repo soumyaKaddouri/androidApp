@@ -5,10 +5,6 @@
         android:icon="@drawable/ic_user"
         android:title="Profile"/>
 
-    <item android:id="@+id/menuNotifications"
-        android:icon="@drawable/ic_notification"
-        android:title="Notifications"/>
-
     <item android:id="@+id/menuProfs"
         android:icon="@drawable/professor"
         android:title="Professors" />
@@ -16,6 +12,10 @@
     <item android:id="@+id/menuStudents"
         android:icon="@drawable/student"
         android:title="Students"/>
+
+    <item android:id="@+id/menuPlannings"
+        android:icon="@drawable/time_planning"
+        android:title="Planning"/>
 
     <item android:title="Others">
 

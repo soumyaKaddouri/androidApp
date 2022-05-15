@@ -11,10 +11,10 @@
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/menuNotifications"
-        android:name="com.example.androidapp.NotificationsFragment"
-        android:label="Notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/menuPlannings"
+        android:name="com.example.androidapp.PlanningsFragment"
+        android:label="Planning"
+        tools:layout="@layout/fragment_plannings" />
     <fragment
         android:id="@+id/menuProfs"
         android:name="com.example.androidapp.ProfessorsFragment"
