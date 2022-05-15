@@ -84,29 +84,7 @@ public class UserListAdapter  extends FirestoreRecyclerAdapter<User,UserListAdap
         System.out.println("Soumaaaaaa" + model.toString());
         holder.phone.setText(model.getPhoneNum());
         holder.email.setText(model.getEmail());
-
-
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-
-                AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext()).setTitle("Delete User").setMessage("Are you sure want to delete ?").setIcon(R.drawable.ic_delete).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseFirestore db = FirebaseFirestore.getInstance();
-                        DocumentReference noteRef = db.collection("users").document(model.getEmail());
-                        noteRef.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-                                }
-                            }
-                        });
-                    }
-                });
-                return false;
-            }
-        });
+        
 
     }
 

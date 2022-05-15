@@ -42,6 +42,7 @@ public class UserData extends AppCompatActivity {
     String userSelectedEmail, userSelectedRole;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseStorage storage = FirebaseStorage.getInstance();
+    FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
     DocumentReference documentReference;
     FirebaseAuth mAuth;
 
@@ -61,7 +62,6 @@ public class UserData extends AppCompatActivity {
         msg = findViewById(R.id.msg);
         callButton = findViewById(R.id.call);
         sendEmail = findViewById(R.id.senEmail);
-        User myUser;
 
         backBtn = findViewById(R.id.backButton);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -72,23 +72,45 @@ public class UserData extends AppCompatActivity {
         });
 
         deleteBtn = findViewById(R.id.deleteBtn);
-        deleteBtn.setOnClickListener(new View.OnClickListener() {
+        editBtn = findViewById(R.id.editBtn);
+
+        DocumentReference documentReference = db.collection("users").document(currentUser.getEmail());
+
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onClick(View view) {
-                AlertDialog diaBox = AskOption();
-                diaBox.show();
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.getResult().exists()){
+                    boolean isCord = task.getResult().getBoolean("isCord");
+                    if(isCord){
+                        deleteBtn.setVisibility(View.VISIBLE);
+                        editBtn.setVisibility(View.VISIBLE);
+                        deleteBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                AlertDialog diaBox = AskOption();
+                                diaBox.show();
+                            }
+                        });
+                        editBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(UserData.this, UpdateUserActivity.class);
+                                intent.putExtra("SELECTED_USER_EMAIL", userSelectedEmail);
+                                startActivity(intent);
+                            }
+                        });
+
+                    }else{
+                        deleteBtn.setVisibility(View.INVISIBLE);
+                        editBtn.setVisibility(View.INVISIBLE);
+                    }
+                }else{
+                    Intent intent = new Intent(UserData.this, Home.class);
+                    startActivity(intent);
+                }
             }
         });
 
-        editBtn = findViewById(R.id.editBtn);
-        editBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UserData.this, UpdateUserActivity.class);
-                intent.putExtra("SELECTED_USER_EMAIL", userSelectedEmail);
-                startActivity(intent);
-            }
-        });
 
         loadUserData();
     }

@@ -2,16 +2,17 @@ package com.example.androidapp.model;
 
 public class User {
     private String fName, email, phoneNum, type;
-
+    boolean isCord;
     public User() {
 
     }
 
-    public User(String fName, String email, String phoneNum, String type) {
+    public User(String fName, String email, String phoneNum, String type,boolean isCord) {
         this.fName = fName;
         this.email = email;
         this.phoneNum = phoneNum;
         this.type = type;
+        this.isCord = isCord;
     }
 
     public String getfName() {
@@ -44,6 +45,14 @@ public class User {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public boolean isCord() {
+        return isCord;
+    }
+
+    public void setCord(boolean cord) {
+        isCord = cord;
     }
 
     @Override

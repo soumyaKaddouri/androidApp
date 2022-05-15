@@ -106,6 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
                         user.put("email",email);
                         user.put("phoneNum",phoneNum);
                         user.put("type",selectedUser);
+                        user.put("isCord",false);
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {

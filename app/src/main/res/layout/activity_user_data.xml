@@ -45,7 +45,8 @@
             android:src="@drawable/ic_edit"
             app:borderWidth="0dp"
             app:tint="@color/white"
-            android:outlineSpotShadowColor="@color/blueColor"/>
+            android:outlineSpotShadowColor="@color/blueColor"
+            android:visibility="invisible"/>
           <com.google.android.material.floatingactionbutton.FloatingActionButton
               android:id="@+id/deleteBtn"
               android:layout_width="wrap_content"
@@ -58,7 +59,8 @@
               android:src="@drawable/ic_delete"
               app:borderWidth="0dp"
               app:tint="@color/white"
-              android:outlineSpotShadowColor="@color/blueColor"/>
+              android:outlineSpotShadowColor="@color/blueColor"
+              android:visibility="invisible"/>
 
 
         <com.makeramen.roundedimageview.RoundedImageView
