@@ -16,16 +16,16 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.androidapp.model.PutPDF;
+import com.example.androidapp.model.UploadPDF;
 
 import java.util.ArrayList;
 
 public class PdfListAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     FragmentActivity mainActivity;
-    ArrayList<PutPDF> downModels;
+    ArrayList<UploadPDF> downModels;
 
-    public PdfListAdapter(FragmentActivity mainActivity, ArrayList<PutPDF> downModels) {
+    public PdfListAdapter(FragmentActivity mainActivity, ArrayList<UploadPDF> downModels) {
         this.mainActivity = mainActivity;
         this.downModels = downModels;
     }

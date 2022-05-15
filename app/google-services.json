@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "358750521537",
+    "firebase_url": "https://iwimapp-7b2b0-default-rtdb.firebaseio.com",
     "project_id": "iwimapp-7b2b0",
     "storage_bucket": "iwimapp-7b2b0.appspot.com"
   },
@@ -10,35 +11,6 @@
         "mobilesdk_app_id": "1:358750521537:android:01f633c0a782cf7489ac40",
         "android_client_info": {
           "package_name": "com.example.androidapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "358750521537-5li2o42b7fke5tvn0k4s1kb01p7l7vt8.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyByVV5Yj2k-kulWaO_SBpnB3U7V_NnOMEc"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "358750521537-5li2o42b7fke5tvn0k4s1kb01p7l7vt8.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:358750521537:android:59f22e67d5e87b8989ac40",
-        "android_client_info": {
-          "package_name": "com.example.firstapp"
         }
       },
       "oauth_client": [

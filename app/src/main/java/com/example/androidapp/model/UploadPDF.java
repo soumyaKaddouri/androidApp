@@ -1,12 +1,12 @@
 package com.example.androidapp.model;
 
-public class PutPDF {
+public class UploadPDF {
     public String name, url;
 
-    public PutPDF() {
+    public UploadPDF() {
     }
 
-    public PutPDF(String name, String url) {
+    public UploadPDF(String name, String url) {
         this.name = name;
         this.url = url;
     }

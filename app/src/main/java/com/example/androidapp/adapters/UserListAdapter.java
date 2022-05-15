@@ -81,10 +81,10 @@ public class UserListAdapter  extends FirestoreRecyclerAdapter<User,UserListAdap
     @Override
     protected void onBindViewHolder(@NonNull UserListViewHolder holder, int position, @NonNull User model) {
         holder.fullName.setText(model.getfName());
-        System.out.println("Soumaaaaaa" + model.toString());
+        //System.out.println("Soumaaaaaa" + model.toString());
         holder.phone.setText(model.getPhoneNum());
         holder.email.setText(model.getEmail());
-        
+
 
     }
 
